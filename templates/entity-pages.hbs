@@ -55,12 +55,29 @@
                                 <li>Money Transmission Licensce Disclosures</li>                                                                                                                                                              
                             </ol>
                         </div> 
-                        <div class="col-span-2 space-y-5">
+                        <div class="col-span-2 grid gap-y-3">
                             <h1 class=""> {{ shortDescription}} </h1>
                             <div class="section space-y-5"> {{ convertRTFToHTML c_helpInstructions}} </div>
-                        
+
+                            <div class="section">
+                                {{>help}}
+                            </div>
+
+                            <div class="section">
+                                {{>relatedArticles}}
+                            </div>
+
+                            <div class="section">
+                                {{>readyToHost}}
+                            </div>
                         </div>
                     </div>
+
+                    <div class="section w-full border-t-2 font-semibold text-airbnb-teal py-16">
+                        <a href="https://www.airbnb.com/help/feedback">Give us feedback</a>
+                    </div>
+
+
          
                 </div>
                 <div class="w-full bg-gray-100">
