@@ -33,11 +33,11 @@ body {
 }
 
 h1 {
-  @apply text-3xl font-bold;
+  @apply text-3xl font-bold text-airbnb-font;
 }
 
 h2 {
-  @apply text-2xl font-bold;
+  @apply text-2xl font-bold text-airbnb-font;
 }
 
 h3 {

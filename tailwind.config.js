@@ -45,6 +45,7 @@ module.exports = {
       colors: {
         "airbnb-gray": "#717171",
         "airbnb-black": "#222222",
+        "airbnb-font": "#484848",
         "airbnb-teal": "#008489"
       },
     },
