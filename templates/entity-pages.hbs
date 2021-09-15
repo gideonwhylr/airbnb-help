@@ -1,17 +1,29 @@
 ---
 {
     "stream": {
-        "$id": "sample-stream",
+        "$id": "article-stream",
         "source": "knowledgeGraph",
         "destination": "pages",
         "fields": [
             "id", 
             "uid", 
-            "name", 
+            "name",
+            "slug",
             "shortDescription",
             "c_helpInstructions",
-            "c_helpTopic", 
-            "slug"
+            "c_helpTopic",
+            "c_parentTopics.name",
+            "c_parentTopics.uid",
+            "c_parentTopics.c_parentTopics.name",
+            "c_parentTopics.c_parentTopics.uid",
+            "c_parentTopics.c_parentTopics.c_childrenTopics.name",
+            "c_parentTopics.c_parentTopics.c_childrenTopics.uid",
+            "c_parentTopics.c_parentTopics.c_relatedTopics.name",
+            "c_parentTopics.c_parentTopics.c_relatedTopics.uid",
+            "c_parentTopics.c_parentTopics.c_parentTopics.name",
+            "c_parentTopics.c_parentTopics.c_parentTopics.uid",
+            "c_parentTopics.c_parentTopics.c_relatedTopics.c_childrenTopics.name",
+            "c_parentTopics.c_parentTopics.c_relatedTopics.c_childrenTopics.uid"
         ], 
         "filter" : {
             "savedFilterIds": [
@@ -35,27 +47,37 @@
             <div class="w-full">
                 {{>nav}}
                 <div class="centered-container pt-4">
+                    <div class="section">{{>breadcrumbs}}</div>
                     <div class="grid grid-cols-1 md:grid-cols-3 auto-cols-min">
                         <div class="flex font-semibold underline gap-x-2 py-5 md:hidden">
                             <img src="images/left-arrow.svg" width="11px" height="11px"><a href="https://www.airbnb.com/help/topic/1586/rules">Rules</a>
                         </div>
                         <div class="md:col-span-1 font-semibold">
                             <ol class="hidden md:block md:space-y-3">
-                                <li>About Airbnb</li>
-                                <li>Your account</li>
-                                <li>Safety</li>
-                                <li>Terms and policies</li>
-                                <li>Terms of service</li>
-                                <li>Our community policies</li>
-                                <li>Payments Terms of Service</li>
-                                <li>Privacy Policy</li>
-                                <li>Privacy policy Supplements</li>
-                                <li>Member policies and standards</li>
-                                <li>Stay terms and policies</li>
-                                <li>Airbnb Expereinces terms and policies</li>
-                                <li>Other terms and policies</li>
-                                <li>Legal resources </li>
-                                <li>Money Transmission Licensce Disclosures</li>                                                                                                                                                              
+                                {{!-- {{>tableOfContents}}                                                 --}}
+                                {{#each c_parentTopics}}
+                                    <script>console.log("{{this}}");</script>
+                                    {{#each c_parentTopics}}
+                                        {{#each c_relatedTopics}}
+                                            {{#if (compare name ../name )}}
+                                                <li class="pl-1 border-l-4 border-black font-extrabold hover:underline">{{name}}</li>
+                                                {{#each ../c_childrenTopics}}
+                                                    <li class="pl-5 hover:underline"><a href={{uid}}>{{name}}</a></li>
+                                                {{/each}}
+                                            {{else}}
+                                                <li class="pl-1 font-semibold hover:underline"><a href={{uid}}>{{name}}</a></li>
+                                            {{/if}}
+                                        {{/each}}
+                                    {{/each}}
+                                    {{!-- {{#if (compare name ../name )}}
+                                        <li class="pl-1 border-l-4 border-black font-extrabold hover:underline">{{name}}</li>
+                                        {{#each ../c_childrenTopics}}
+                                            <li class="pl-5 hover:underline"><a href={{uid}}>{{name}}</a></li>
+                                        {{/each}}
+                                    {{else}}
+                                        <li class="pl-1 font-semibold hover:underline"><a href={{uid}}>{{name}}</a></li>
+                                    {{/if}} --}}
+                                {{/each}}
                             </ol>
                         </div> 
                         <div class="md:col-span-2 grid gap-y-3">

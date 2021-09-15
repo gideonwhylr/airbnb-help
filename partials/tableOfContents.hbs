@@ -1,0 +1,10 @@
+{{#each c_relatedTopics}}
+    {{#if (compare name ../name )}}
+        <li class="pl-1 border-l-4 border-black font-extrabold hover:underline">{{name}}</li>
+        {{#each ../c_childrenTopics}}
+            <li class="pl-5 hover:underline"><a href={{uid}}>{{name}}</a></li>
+        {{/each}}
+    {{else}}
+        <li class="pl-1 font-semibold hover:underline"><a href={{uid}}>{{name}}</a></li>
+    {{/if}}
+{{/each}}

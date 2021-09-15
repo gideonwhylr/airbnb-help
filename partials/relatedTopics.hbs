@@ -1,0 +1,6 @@
+{{#each this}}
+    <li class="font-semibold">{{name}}</li>
+    {{#if (compare name ../../name )}}
+        <script>console.log("same");</script>
+    {{/if}}
+{{/each}}

@@ -1,0 +1,40 @@
+{{!-- <div class="flex flex-wrap items-center space-x-2">
+    <span>
+        {{#each c_parentTopics}}
+            {{#each c_parentTopics}}
+                {{#each c_parentTopics}}
+                    <span><a class="bc-link" href={{this.slug}}>{{this.name}}</a></span>
+                {{/each}}
+                <span><a class="bc-link" href={{this.slug}}>{{this.name}}</a></span>
+            {{/each}}
+            <span><img src="images/right-arrow.svg" width="11" height="11"></span>
+            <span><a class="bc-link" href={{this.slug}}>{{this.name}}</a></span>
+        {{/each}}
+
+        <span><img src="images/right-arrow.svg" width="11" height="11"></span>
+    </span>
+    
+</div> --}}
+
+
+<div class="flex flex-wrap">
+
+    {{#each c_parentTopics}}
+        <script>console.log("{{this}}");</script>
+        {{#each c_parentTopics}}
+            {{#each c_parentTopics}}
+                <div class="bc-link">
+                    <a href={{this.slug}}>{{this.name}}</a>
+                    <img src="images/right-arrow.svg" width="11" height="11">              
+            {{/each}}
+                <a href={{this.slug}}>{{this.name}}</a>
+                <img src="images/right-arrow.svg" width="11" height="11">
+        {{/each}}
+            <a href={{this.slug}}>{{this.name}}</a>
+            <img src="images/right-arrow.svg" width="11" height="11">
+        </div>
+    {{/each}}
+
+
+    <div class="">{{this.name}}</div>
+</div>

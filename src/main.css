@@ -11,6 +11,11 @@
   @apply font-semibold;
 }
 
+/* Breadcrumb Styling */
+.bc-link {
+  @apply flex gap-x-2 underline font-semibold hover:cursor-pointer;
+}
+
 /* Related Article Cards */
 .article-card {
   @apply p-6 border rounded-lg shadow-lg gap-y-3 hover:cursor-pointer flex flex-col justify-between;
