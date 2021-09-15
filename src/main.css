@@ -1,42 +1,20 @@
 @tailwind base;
 @tailwind components;
 
+/* Top-level Tag Styling */
 
-/* Header Styline */
-
-.topnav #myLinks {
-  display: none;
-}
-.headerLink {
-  @apply font-semibold;
+ul {
+  list-style: inside;
 }
 
-/* Topic Styling */
-.topic-item {
-  @apply flex;
+a {
+  color: #008489;
+  text-decoration: underline; 
 }
 
-/* Breadcrumb Styling */
-.bc-link {
-  @apply flex gap-x-2 underline font-semibold hover:cursor-pointer;
+.airbnb-link {
+  @apply text-airbnb-font no-underline;
 }
-
-/* Related Article Cards */
-.article-card {
-  @apply p-6 border rounded-lg shadow-lg gap-y-3 hover:cursor-pointer flex flex-col justify-between;
-}
-
-.article-svg {
-  @apply flex space-x-2 mt-2 text-airbnb-gray text-sm font-semibold;
-}
-
-/* Help Buttons */
-.help-btn {
-  @apply border w-14 border-black rounded-lg px-3 py-1 hover:bg-gray-100 hover:cursor-pointer;
-}
-
-
-/* Body Styling */
 
 body {
   @apply bg-gray-50 font-body;
@@ -62,6 +40,42 @@ h5 {
   @apply text-md font-bold;
 }
 
+
+
+/* Header Styline */
+
+.topnav #myLinks {
+  display: none;
+}
+.headerLink {
+  @apply font-semibold;
+}
+
+/* Topic Styling */
+.topic-item {
+  @apply flex;
+}
+
+/* Breadcrumb Styling */
+.bc-link {
+  @apply flex gap-x-2 underline font-semibold hover:cursor-pointer;
+}
+
+/* Related Article Cards */
+.article-card {
+  @apply p-6 border rounded-lg shadow-lg gap-y-3 text-airbnb-font no-underline hover:cursor-pointer flex flex-col justify-between;
+}
+
+.article-svg {
+  @apply flex space-x-2 mt-2 text-airbnb-gray text-sm font-semibold;
+}
+
+/* Help Buttons */
+.help-btn {
+  @apply border w-14 border-black rounded-lg px-3 py-1 hover:bg-gray-100 hover:cursor-pointer;
+}
+
+
 .centered-container {
   @apply mx-auto px-5 md:px-14 max-w-screen-xl;
 }
@@ -77,6 +91,7 @@ h2.section-header {
 .section {
   @apply mt-8 mb-8;
 }
+
 
 
 

@@ -62,12 +62,14 @@
                         </div>
                         <div class="md:col-span-1">
                             <ol class="hidden md:block md:space-y-3">
-                                {{>helptopics c_parentTopics}}
+                                {{>getHelpTopics c_parentTopics}}
                             </ol>
                         </div> 
                         <div class="md:col-span-2 grid gap-y-3">
                             {{!-- <h1 class=""> {{name}} </h1> --}}
-                            <div class="section space-y-5"> {{convertRTFToHTML body}} </div>
+                            <div class="RTF-body section space-y-5" style="">
+                                {{convertRTFToHTML body}}
+                            </div>
 
                             <div class="section">
                                 {{>help}}
@@ -78,7 +80,7 @@
                             </div>
 
                             <div class="section">
-                                <a href="https://www.airbnb.com/host/homes" target="_blank">{{>readyToHost}}</a>
+                                <a class="airbnb-link" href="https://www.airbnb.com/host/homes" target="_blank">{{>readyToHost}}</a>
                             </div>
                         </div>
                     </div>

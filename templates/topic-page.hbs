@@ -15,6 +15,8 @@
             "c_childrenTopics.c_childrenTopics.uid",
             "c_relatedTopics.name",
             "c_relatedTopics.uid",
+            "c_relatedTopics.c_childrenTopics.name",
+            "c_relatedTopics.c_childrenTopics.uid",
             "c_parentTopics.name",
             "c_parentTopics.uid",
             "c_parentTopics.c_relatedTopics.name",
@@ -54,7 +56,12 @@
                         </div>
                         <div class="md:col-span-1">
                             <ol class="hidden md:block md:space-y-3 md:px-10">
-                                {{>helptopics c_parentTopics}}
+                                {{#if (compare c_parentTopics.[0].name "Help Center")}}
+                                    <script>console.log("match");</script>
+                                    {{>tableOfContents}}
+                                {{else}}
+                                    {{>getHelpTopics c_parentTopics}}
+                                {{/if}}
                             </ol>
                         </div> 
                         <div class="md:col-span-2 grid gap-y-5">
@@ -67,7 +74,7 @@
                                         {{#each this}}
                                             {{#each this}}
                                                 <div class="topic-item items-center gap-x-2 hover:underline">
-                                                    <a href={{uid}}>
+                                                    <a class="airbnb-link" href={{uid}}>
                                                         {{name}}
                                                         <img style="display: inline;" src="/images/right-arrow.svg" width="16px" height="16px">
                                                     </a>
@@ -77,9 +84,9 @@
                                         </div>
                                     {{else}}
                                         <div class="inline-block items-center gap-x-2 hover:underline">
-                                            <a class="topic-item" href={{this.uid}}>
+                                            <a class="airbnb-link" class="topic-item" href={{this.uid}}>
                                                 {{this.name}}
-                                                <img src="/images/right-arrow.svg" width="16px" height="16px">
+                                                <img style="display: inline;" src="/images/right-arrow.svg" width="16px" height="16px">
                                             </a>
                                         </div>
                                     {{/if}}
