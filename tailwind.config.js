@@ -24,6 +24,9 @@ module.exports = {
        '6xl': '4rem',
       '7xl': '5rem',
      },
+     fontFamily: {
+      'body': ['Circular', '-apple-system', 'BlinkMacSystemFont', 'Roboto', 'Helvetica Neue', 'sans-serif']
+     },
     screens: {
       'xs': '475px',
       'sm': '640px',

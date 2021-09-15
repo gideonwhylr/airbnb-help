@@ -42,7 +42,6 @@
         <link rel="shortcut icon" type="image/x-icon" href="https://a0.muscache.com/airbnb/static/logotype_favicon-21cc8e6c6a2cca43f061d2dcabdf6e58.ico">
     </head>
     <body>      
-            <div class=""> </div>
             <div class="w-full">
                 {{>nav}}
                 <div class="centered-container pt-4">
@@ -51,10 +50,10 @@
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 auto-cols-min">
                         <div class="flex font-semibold underline gap-x-2 py-5 md:hidden">
-                            <img src="images/left-arrow.svg" width="11px" height="11px"><a href="https://www.airbnb.com/help/topic/1586/rules">Rules</a>
+                            <img src="/images/left-arrow.svg" width="11px" height="11px"><a href="https://www.airbnb.com/help/topic/1586/rules">Rules</a>
                         </div>
                         <div class="md:col-span-1">
-                            <ol class="hidden md:block md:space-y-3">
+                            <ol class="hidden md:block md:space-y-3 md:px-10">
                                 {{>helptopics c_parentTopics}}
                             </ol>
                         </div> 
@@ -67,17 +66,22 @@
                                         <div class="grid gap-y-3">
                                         {{#each this}}
                                             {{#each this}}
-                                                <script>console.log("{{this}}");</script>
+                                                <div class="topic-item items-center gap-x-2 hover:underline">
                                                     <a href={{uid}}>
-                                                        <div class="flex items-center gap-x-2 hover:underline">{{name}}
-                                                        <img src="images/right-arrow.svg" width="11px" height="11px">
-                                                        </div>
+                                                        {{name}}
+                                                        <img style="display: inline;" src="/images/right-arrow.svg" width="16px" height="16px">
                                                     </a>
+                                                </div>    
                                             {{/each}}
                                         {{/each}}
                                         </div>
                                     {{else}}
-                                        <div class="flex items-center gap-x-2 hover:underline"><a href={{this.uid}}>{{this.name}}</a><img src="images/right-arrow.svg" width="11px" height="11px"></div>
+                                        <div class="inline-block items-center gap-x-2 hover:underline">
+                                            <a class="topic-item" href={{this.uid}}>
+                                                {{this.name}}
+                                                <img src="/images/right-arrow.svg" width="16px" height="16px">
+                                            </a>
+                                        </div>
                                     {{/if}}
                                 {{/each}}
                             </div>

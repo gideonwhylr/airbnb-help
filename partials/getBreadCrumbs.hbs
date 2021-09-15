@@ -2,13 +2,13 @@
     {{#if (contains this "c_parentTopics")}}
         <div class="bc-link">
             <a href={{this.uid}}>{{this.name}}</a>
-            <img src="images/right-arrow.svg" width="11" height="11"> 
+            <img src="/images/right-arrow.svg" width="11.31px" height="11.31px"> 
         </div> 
         {{>getBreadCrumbs this.c_parentTopics}}
     {{else}}
         <div class="bc-link">
             <a href={{this.uid}}>{{this.name}}</a>
-            <img src="images/right-arrow.svg" width="11" height="11"> 
+            <img src="/images/right-arrow.svg" width="11.31px" height="11.31px"> 
         </div>   
     {{/if}}
 {{/each}}

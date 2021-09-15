@@ -50,7 +50,6 @@
         <link rel="shortcut icon" type="image/x-icon" href="https://a0.muscache.com/airbnb/static/logotype_favicon-21cc8e6c6a2cca43f061d2dcabdf6e58.ico">
     </head>
     <body>      
-            <div class=""> </div>
             <div class="w-full">
                 {{>nav}}
                 <div class="centered-container pt-4">
@@ -59,16 +58,16 @@
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 auto-cols-min">
                         <div class="flex font-semibold underline gap-x-2 py-5 md:hidden">
-                            <img src="images/left-arrow.svg" width="11px" height="11px"><a href="https://www.airbnb.com/help/topic/1586/rules">Rules</a>
+                            <img src="/images/left-arrow.svg" width="11px" height="11px"><a href="https://www.airbnb.com/help/topic/1586/rules">Rules</a>
                         </div>
-                        <div class="md:col-span-1 font-semibold">
+                        <div class="md:col-span-1">
                             <ol class="hidden md:block md:space-y-3">
                                 {{>helptopics c_parentTopics}}
                             </ol>
                         </div> 
                         <div class="md:col-span-2 grid gap-y-3">
                             {{!-- <h1 class=""> {{name}} </h1> --}}
-                            <div class="section space-y-5"> {{ convertRTFToHTML body}} </div>
+                            <div class="section space-y-5"> {{convertRTFToHTML body}} </div>
 
                             <div class="section">
                                 {{>help}}

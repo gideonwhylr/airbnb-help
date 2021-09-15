@@ -2,12 +2,23 @@
     <div class="flex flex-wrap p-5 border-b-2 border-gray-200 justify-between ">
         <a href="/">
             <div class="inline-flex items-center float-left">
-                <img src="images/logo.png" height="56" width="56" class="hidden md:flex">
+                <img src="/images/logo.png" height="56" width="56" class="hidden md:flex">
                 <h2 class="md:pl-5 text-xl cursor-pointer">
                     Help Center
                 </h2>
             </div>
         </a>
+
+        <div class="border border-gray-200 shadow-md rounded-lg px-3 py-2 flex items-center focus-within:ring-2 focus-within:ring-blue-400">
+            <img src="/images/icon-search.svg" width="18px" height="18px">
+        <input
+            class="bg-transparent w-full mx-2 focus:outline-none"
+            type="text"
+            placeholder="Search help articles"
+            aria-label="Navigation search bar for help articles"
+        />
+        </div>
+
         <div class="hidden md:flex grid gap-x-10 items-center">
             <a href="#" class="headerLink hover:underline ">English</a>
             <a href="#" class="headerLink hover:underline ">USD</a>

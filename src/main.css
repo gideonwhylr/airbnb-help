@@ -11,6 +11,11 @@
   @apply font-semibold;
 }
 
+/* Topic Styling */
+.topic-item {
+  @apply flex;
+}
+
 /* Breadcrumb Styling */
 .bc-link {
   @apply flex gap-x-2 underline font-semibold hover:cursor-pointer;
@@ -34,7 +39,7 @@
 /* Body Styling */
 
 body {
-  @apply bg-gray-50;
+  @apply bg-gray-50 font-body;
 }
 
 h1 {
