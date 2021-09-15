@@ -15,7 +15,13 @@
             "c_relatedTopics.name",
             "c_relatedTopics.uid",
             "c_parentTopics.name",
-            "c_parentTopics.slug"
+            "c_parentTopics.uid",
+            "c_parentTopics.c_relatedTopics.name",
+            "c_parentTopics.c_relatedTopics.uid",
+            "c_parentTopics.c_relatedTopics.c_childrenTopics.name",
+            "c_parentTopics.c_relatedTopics.c_childrenTopics.uid",
+            "c_parentTopics.c_parentTopics.name",
+            "c_parentTopics.c_parentTopics.uid"
         ], 
         "filter" : {
             "savedFilterIds": [
@@ -48,7 +54,7 @@
                         </div>
                         <div class="md:col-span-1">
                             <ol class="hidden md:block md:space-y-3">
-                                {{>tableOfContents}}
+                                {{>helptopics c_parentTopics}}
                             </ol>
                         </div> 
                         <div class="md:col-span-2 grid gap-y-5">
