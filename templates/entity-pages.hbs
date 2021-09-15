@@ -9,6 +9,7 @@
             "uid", 
             "name",
             "slug",
+            "body",
             "shortDescription",
             "c_helpInstructions",
             "c_helpTopic",
@@ -66,8 +67,8 @@
                             </ol>
                         </div> 
                         <div class="md:col-span-2 grid gap-y-3">
-                            <h1 class=""> {{ shortDescription}} </h1>
-                            <div class="section space-y-5"> {{ convertRTFToHTML c_helpInstructions}} </div>
+                            {{!-- <h1 class=""> {{name}} </h1> --}}
+                            <div class="section space-y-5"> {{ convertRTFToHTML body}} </div>
 
                             <div class="section">
                                 {{>help}}

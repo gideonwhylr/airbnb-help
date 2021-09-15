@@ -10,8 +10,9 @@
             "name",
             "slug",
             "c_childrenTopics.name",
-            "c_childrenTopics.slug",
+            "c_childrenTopics.uid",
             "c_childrenTopics.c_childrenTopics.name",
+            "c_childrenTopics.c_childrenTopics.uid",
             "c_relatedTopics.name",
             "c_relatedTopics.uid",
             "c_parentTopics.name",
@@ -66,12 +67,17 @@
                                         <div class="grid gap-y-3">
                                         {{#each this}}
                                             {{#each this}}
-                                                <div class="flex items-center gap-x-2 hover:underline">{{name}}<img src="images/right-arrow.svg" width="11px" height="11px"></div>
+                                                <script>console.log("{{this}}");</script>
+                                                    <a href={{uid}}>
+                                                        <div class="flex items-center gap-x-2 hover:underline">{{name}}
+                                                        <img src="images/right-arrow.svg" width="11px" height="11px">
+                                                        </div>
+                                                    </a>
                                             {{/each}}
                                         {{/each}}
                                         </div>
                                     {{else}}
-                                        <div class="flex items-center gap-x-2 hover:underline"><a href={{this.slug}}>{{this.name}}</a><img src="images/right-arrow.svg" width="11px" height="11px"></div>
+                                        <div class="flex items-center gap-x-2 hover:underline"><a href={{this.uid}}>{{this.name}}</a><img src="images/right-arrow.svg" width="11px" height="11px"></div>
                                     {{/if}}
                                 {{/each}}
                             </div>
