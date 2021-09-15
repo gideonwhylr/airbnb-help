@@ -1,0 +1,14 @@
+{{#each this}}
+    {{#if (contains this "c_parentTopics")}}
+        <div class="bc-link">
+            <a href={{this.uid}}>{{this.name}}</a>
+            <img src="images/right-arrow.svg" width="11" height="11"> 
+        </div> 
+        {{>getBreadCrumbs this.c_parentTopics}}
+    {{else}}
+        <div class="bc-link">
+            <a href={{this.uid}}>{{this.name}}</a>
+            <img src="images/right-arrow.svg" width="11" height="11"> 
+        </div>   
+    {{/if}}
+{{/each}}
