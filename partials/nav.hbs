@@ -1,37 +1,54 @@
-<div class="topnav">
-    <div class="flex flex-wrap p-5 border-b-2 border-gray-200 justify-between ">
-        <div class="flex gap-x-5">
-            <a class="airbnb-link" href="/">
-                <div class="inline-flex items-center float-left">
-                    <img src="/images/logo.png" height="56" width="56" class="hidden md:flex">
-                    <h2 class="md:pl-5 text-xl cursor-pointer">
-                        Help Center
-                    </h2>
+<div class="topnav p-5 border">
+
+    {{!-- <div class="flex flex-wrap p-5 border-b-2 border-gray-200 justify-between "> --}}
+        <div class="flex flex-col gap-x-6 gap-y-5 md:items-center md:flex-row justify-between">
+            
+            <div class="flex flex-col gap-x-5 gap-y-5 md:flex-row">
+                <div class="flex justify-between items-center">
+                    <a class="airbnb-link flex space-x-5" href="/">
+                        <img src="/images/logo.png" height="32" width="32" class="md:flex">
+                        <div class="text-xl font-bold text-airbnb-font cursor-pointer">
+                            Help Center
+                        </div>
+                    </a>
+                    <div class="btn md:hidden">Menu</div> 
                 </div>
-            </a>
+                 
 
-            <div class="search_form">
-                <img src="/images/icon-search.svg" width="18px" height="18px">
+                <div class="search_form">
+                    <img src="/images/icon-search.svg" width="18px" height="18px">
+                </div>
             </div>
-
-            {{!-- <div class="border border-gray-200 shadow-md w-96 rounded-lg px-3 my-1 flex items-center focus:shadow-xl">
-                <img src="/images/icon-search.svg" width="18px" height="18px">
-                <input
-                    class="bg-transparent w-full mx-2 focus:outline-none"
-                    type="text"
-                    placeholder="Search help articles"
-                    aria-label="Navigation search bar for help articles"
-                />
-            </div> --}}
+        
+            <div class="btn hidden md:block lg:hidden">Menu</div>
+            <div class="hidden lg:flex grid gap-x-10 items-center">
+                <a class="airbnb-link headerLink" href="#">
+                    <img src="/images/language.svg" width="13px" height="13px">
+                    English
+                </a>
+                <a class="airbnb-link headerLink" href="#">
+                   $ USD
+                </a>
+                <a class="airbnb-link headerLink" href="#">
+                    Sign Up
+                </a>
+                <a class="airbnb-link headerLink" href="#">
+                    Login
+                </a>
+            </div>
+        
         </div>
 
-        <div class="hidden md:flex grid gap-x-10 items-center">
+        
+
+        {{!-- <div class="hidden md:flex grid gap-x-10 items-center">
             <a class="airbnb-link" href="#" class="headerLink hover:underline ">English</a>
             <a class="airbnb-link" href="#" class="headerLink hover:underline ">USD</a>
             <a class="airbnb-link" href="#" class="headerLink hover:underline ">Sign Up</a>
             <a class="airbnb-link" href="#" class="headerLink hover:underline ">Login</a>
-        </div>
-
+        </div> --}}
     </div>
+
+    {{!-- <div class="hidden md:border-b-2 border-gray-200"></div> --}}
 
 </div>

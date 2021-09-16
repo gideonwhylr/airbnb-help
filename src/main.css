@@ -3,7 +3,20 @@
 
 /* Answers Styling */
 .search_form {
-  @apply border border-gray-200 shadow-md w-96 rounded-lg px-3 my-1 flex flex-row-reverse justify-end gap-x-3 items-center focus:shadow-xl;
+  box-shadow: 0 2px 3px rgba(33,33,33,.2); 
+  transition: box-shadow 200ms ease-in; 
+  @apply border border-gray-200 w-auto h-12 rounded-lg px-3 my-1 flex flex-row-reverse justify-end gap-x-3 items-center md:w-96;
+}
+.search_form:hover {
+  box-shadow: 0 3px 6px rgba(33,33,33,.2); 
+}
+
+.yxt-SearchBar {
+  @apply w-full;
+}
+
+.js-yext-query {
+  @apply w-full;
 }
 
 .yxt-SearchBar-input {
@@ -62,7 +75,14 @@ h5 {
   @apply text-md font-bold;
 }
 
+/* Help Buttons */
+.btn {
+  @apply border w-auto border-black rounded-lg px-4 py-1 hover:bg-gray-100 hover:cursor-pointer;
+}
 
+.svg-link {
+  @apply flex gap-x-2;
+}
 
 /* Header Styline */
 
@@ -70,7 +90,7 @@ h5 {
   display: none;
 }
 .headerLink {
-  @apply font-semibold;
+  @apply flex gap-x-2 hover:border-b-2 border-black;
 }
 
 /* Topic Styling */
