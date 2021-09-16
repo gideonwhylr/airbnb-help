@@ -9,6 +9,34 @@
   defer
 ></script>
 
+  <script src="https://assets.sitescdn.net/answers-search-bar/v1.0/answerstemplates.compiled.min.js"></script>
+  <script>
+    function initAnswers() {
+      ANSWERS.init({
+        apiKey: "9a6e133baf916294690b5836775caf4b",
+        experienceKey: "answers-help-site",
+        experienceVersion: "SANDBOX",
+        locale: "en", // e.g. en
+        businessId: "2664448",
+        templateBundle: TemplateBundle.default,
+        onReady: function() {
+          ANSWERS.addComponent("SearchBar", {
+            container: ".search_form",
+            name: "search-bar", //Must be unique for every search bar on the same page
+            redirectUrl: "https://2664448_supportembed_com.sbx.yextpages.net/",
+            placeholderText: "Search help articles",
+          });
+        },
+      });
+    }
+  </script>
+  <script
+    src="https://assets.sitescdn.net/answers-search-bar/v1.0/answers.min.js"
+    onload="ANSWERS.domReady(initAnswers)"
+    async
+    defer
+  ></script>
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
 <!-- Google Tag Manager -->

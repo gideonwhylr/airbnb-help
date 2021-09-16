@@ -1,6 +1,28 @@
 @tailwind base;
 @tailwind components;
 
+/* Answers Styling */
+.search_form {
+  @apply border border-gray-200 shadow-md w-96 rounded-lg px-3 my-1 flex flex-row-reverse justify-end gap-x-3 items-center focus:shadow-xl;
+}
+
+.yxt-SearchBar-input {
+  @apply bg-transparent focus:outline-none;
+}
+
+.yxt-SearchBar-clear {
+  display: none;
+}
+
+.yxt-SearchBar-button {
+  display: none;
+}
+
+.sr-only {
+  display: none;
+}
+
+
 /* Top-level Tag Styling */
 
 ul {

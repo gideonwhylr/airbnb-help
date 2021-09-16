@@ -10,7 +10,11 @@
                 </div>
             </a>
 
-            <div class="border border-gray-200 shadow-md w-96 rounded-lg px-3 my-1 flex items-center focus:shadow-xl">
+            <div class="search_form">
+                <img src="/images/icon-search.svg" width="18px" height="18px">
+            </div>
+
+            {{!-- <div class="border border-gray-200 shadow-md w-96 rounded-lg px-3 my-1 flex items-center focus:shadow-xl">
                 <img src="/images/icon-search.svg" width="18px" height="18px">
                 <input
                     class="bg-transparent w-full mx-2 focus:outline-none"
@@ -18,7 +22,7 @@
                     placeholder="Search help articles"
                     aria-label="Navigation search bar for help articles"
                 />
-            </div>
+            </div> --}}
         </div>
 
         <div class="hidden md:flex grid gap-x-10 items-center">
@@ -28,30 +32,6 @@
             <a class="airbnb-link" href="#" class="headerLink hover:underline ">Login</a>
         </div>
 
-        <a class="airbnb-link" href="javascript:void(0);" class="hamburger md:hidden" onclick="hamburger()">
-            <svg class="md:hidden" viewBox="0 0 100 80" width="40" height="40">
-                <rect width="90" height="15"></rect>
-                <rect y="30" width="90" height="15"></rect>
-                <rect y="60" width="90" height="15"></rect>
-            </svg>
-        </a>
     </div>
 
-    <div class="links-mobile-view px-5 py-3 bg-black text-white" id="myLinks">
-        <div><a class="airbnb-link" href="#home">Home</a></div>
-        <div><a class="airbnb-link" href="#about">About</a></div>
-        <div><a class="airbnb-link" href="#locations">Locations</a></div>
-        <div><a class="airbnb-link" href="#blog">Blog</a></div>
-    </div>
 </div>
-
-<script>
-    function hamburger() {
-    var x = document.getElementById("myLinks");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-    }
-</script>
