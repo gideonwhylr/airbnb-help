@@ -24,7 +24,11 @@
             "c_parentTopics.c_parentTopics.c_parentTopics.c_relatedTopics.name",
             "c_parentTopics.c_parentTopics.c_parentTopics.c_relatedTopics.uid",
             "c_parentTopics.c_parentTopics.c_parentTopics.c_relatedTopics.c_childrenTopics.name",
-            "c_parentTopics.c_parentTopics.c_parentTopics.c_relatedTopics.c_childrenTopics.uid",                
+            "c_parentTopics.c_parentTopics.c_parentTopics.c_relatedTopics.c_childrenTopics.uid",    
+            "c_parentTopics.c_parentTopics.c_parentTopics.c_relatedTopics.c_childrenTopics.c_childrenTopics.name",
+            "c_parentTopics.c_parentTopics.c_parentTopics.c_relatedTopics.c_childrenTopics.c_childrenTopics.uid", 
+            "c_parentTopics.c_parentTopics.c_parentTopics.c_childrenTopics.name",  
+            "c_parentTopics.c_parentTopics.c_parentTopics.c_childrenTopics.uid",                 
             "c_parentTopics.c_parentTopics.c_parentTopics.c_parentTopics.name",
             "c_parentTopics.c_parentTopics.c_parentTopics.c_parentTopics.uid",
             "c_parentTopics.c_parentTopics.c_relatedTopics.name",
@@ -56,13 +60,109 @@
                     <div class="section">
                         {{>breadcrumbs this}}
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 auto-cols-min">
+                    <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4">
                         <div class="md:col-span-1">
-                            <ol class="hidden md:block md:space-y-3">
-                                {{>getHelpTopics c_parentTopics}}
+                            <ol class="hidden pr-10 md:block md:space-y-3">
+                                {{!-- {{>getHelpTopics c_parentTopics}} --}}
+
+                                {{#each c_parentTopics}}
+                                    {{#each c_parentTopics}}
+                                        {{#if (compare c_parentTopics.[0].name "Help Center")}}
+                                           {{#each c_relatedTopics}}
+                                                {{#if (compare name ../name)}}
+                                                    <div class="pl-1 font-semibold hover:underline">
+                                                        <a class="airbnb-link" href={{uid}}>
+                                                            {{name}}
+                                                        </a>
+                                                    </div>
+                                                    {{#each c_childrenTopics}}
+                                                        <script>console.log("{{name}} , {{../../../name}}");</script>
+                                                        {{#if (compare name ../../../../name )}}
+                                                            <div class="ml-5 pl-1 border-l-4 border-black font-bold hover:underline">
+                                                                <a class="airbnb-link" href={{uid}}>
+                                                                    {{name}}
+                                                                </a>
+                                                            </div>
+                                                        {{else}}
+                                                            <div class="ml-5 pl-1 hover:underline">
+                                                                <a class="airbnb-link" href={{uid}}>
+                                                                    {{name}}
+                                                                </a>
+                                                            </div>
+                                                        {{/if}}
+                                                    {{/each}}
+                                                {{else}}
+                                                    <div class="pl-1 font-semibold hover:underline">
+                                                        <a class="airbnb-link" href={{uid}}>
+                                                            {{name}}
+                                                        </a>
+                                                    </div>
+                                                {{/if}}
+                                           {{/each}}
+                                        {{else}}
+                                            {{#each c_parentTopics}}
+                                            {{#each c_relatedTopics}}
+                                                    <script>console.log("related topic: {{name}}");</script>
+                                                    <div class="pl-1 font-semibold hover:underline">
+                                                        <a class="airbnb-link" href={{uid}}>
+                                                            {{name}}
+                                                        </a>
+                                                    </div>
+                                            {{/each}}
+                                                {{#each c_childrenTopics}}
+                                                    <script>console.log("{{name}} , {{../../name}}");</script>
+                                                    {{#if (compare name ../../name )}}
+                                                        <div class="ml-5 pl-1 border-l-4 border-black font-bold hover:underline">
+                                                            <a class="airbnb-link" href={{uid}}>
+                                                                {{name}}
+                                                            </a>
+                                                        </div>
+                                                    {{else}}
+                                                        <div class="ml-5 pl-1 hover:underline">
+                                                            <a class="airbnb-link" href={{uid}}>
+                                                                {{name}}
+                                                            </a>
+                                                        </div>
+                                                    {{/if}}
+                                                {{/each}}
+                                            {{/each}}
+                                        {{/if}}
+                                    {{/each}}
+                                {{/each}}
+
+                                {{!-- {{#each c_parentTopics}}
+                                    {{#each c_parentTopics}}
+                                        {{#each c_parentTopics}}
+                                           {{#each c_relatedTopics}}
+                                                <script>console.log("related topic: {{name}}");</script>
+                                                <div class="pl-1 font-semibold hover:underline">
+                                                    <a class="airbnb-link" href={{uid}}>
+                                                        {{name}}
+                                                    </a>
+                                                </div>
+                                           {{/each}}
+                                            {{#each c_childrenTopics}}
+                                                <script>console.log("{{name}} , {{../../name}}");</script>
+                                                {{#if (compare name ../../name )}}
+                                                    <div class="ml-5 pl-1 border-l-4 border-black font-bold hover:underline">
+                                                        <a class="airbnb-link" href={{uid}}>
+                                                            {{name}}
+                                                        </a>
+                                                    </div>
+                                                {{else}}
+                                                    <div class="ml-5 pl-1 hover:underline">
+                                                        <a class="airbnb-link" href={{uid}}>
+                                                            {{name}}
+                                                        </a>
+                                                    </div>
+                                                {{/if}}
+                                            {{/each}}
+                                        {{/each}}
+                                    {{/each}}
+                                {{/each}} --}}
                             </ol>
                         </div> 
-                        <div class="md:col-span-2 grid gap-y-3">
+                        <div class="md:col-span-2 grid gap-y-3 xl:col-span-3">
                             {{!-- <h1 class=""> {{name}} </h1> --}}
                             <div class="RTF-body section space-y-5" style="">
                                 {{convertRTFToHTML body}}

@@ -1,7 +1,8 @@
 {{#each this}}
-    <script>console.log("{{this}}");</script>
+    <script>console.log("{{this.name}}");</script>
     {{#if (contains this "c_relatedTopics")}}
         {{#each c_relatedTopics}}
+            <script>console.log("related topic: {{name}}");</script>
             {{#if (compare name ../name )}}
                 <li class="pl-1 border-l-4 border-black font-extrabold hover:underline">{{name}}</li>
                 {{#each c_childrenTopics}}
