@@ -100,7 +100,7 @@ h5 {
 
 /* Breadcrumb Styling */
 .bc-link {
-  @apply flex gap-x-2 underline font-semibold hover:cursor-pointer;
+  @apply flex gap-x-2 px-2 underline font-semibold hover:cursor-pointer;
 }
 
 /* Related Article Cards */

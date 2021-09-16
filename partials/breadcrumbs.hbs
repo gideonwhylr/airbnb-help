@@ -1,12 +1,12 @@
-<div>
-    <div class="flex font-semibold underline gap-x-2 py-5 md:hidden">
+<nav>
+    <div class="flex font-semibold underline gap-x-2 md:hidden">
         {{#each c_parentTopics}}
             <img src="/images/left-arrow.svg" width="11px" height="11px"><a class="airbnb-link" href={{this.uid}}>{{this.name}}</a>
         {{/each}}
     </div>
 
     <div class="hidden text-sm md:flex flex-row-reverse justify-end gap-x-2">
-        <div class="">{{this.name}}</div>
+        <span class="whitespace-normal pl-2">{{this.name}}</span>
         {{>getBreadCrumbs this.c_parentTopics}}
     </div>
-</div>
+</nav>
