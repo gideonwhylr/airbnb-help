@@ -53,7 +53,7 @@ a {
 
 body {
   background-color: #fff;
-  @apply bg-gray-50 font-body;
+  @apply bg-pink-100 font-body;
 }
 
 h1 {
