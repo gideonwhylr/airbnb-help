@@ -52,6 +52,7 @@ a {
 }
 
 body {
+  background-color: #fff;
   @apply bg-gray-50 font-body;
 }
 
