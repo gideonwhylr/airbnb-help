@@ -1,33 +1,57 @@
 <div class="text-2xl font-semibold">Related articles</div>
 <div class="grid gap-x-4 gap-y-5 lg:grid-cols-3">
-    <a class="article-card" href="https://www.airbnb.com/help/article/272/can-i-require-guests-to-be-verified-before-booking" target="_blank">
-        <div class="space-y-2">
-            <h5>Can I require guests to be verified before booking?</h5>
-            <div>Hosts can require guests to complete Airbnb's Verified ID process...</div>
-        </div>
-        <div class="article-svg">
-            <img src="/images/hosting-stays.svg" height="16px" width="16px">
-            <span>Hosting stays</span>
-        </div>
-    </a>
-    <a class="article-card" href="https://www.airbnb.com/help/article/18/all-the-ways-to-host-on-airbnb" target="_blank">
-        <div class="space-y-2">
-            <h5>All the ways to host on Airbnb</h5>
-            <div>Maybe you have a special place to stay, or a great idea...</div>
-        </div>
-        <div class="article-svg">
-            <img src="/images/airbnb-basics.svg" height="16px" width="16px">
-            <span>Airbnb basics</span>
-        </div>
-    </a>
-    <a class="article-card" href="https://www.airbnb.com/help/article/376/what-legal-and-regulatory-issues-should-i-consider-before-hosting-on-airbnb" target="_blank">
-        <div class="space-y-2">
-            <h5>What legal and regulatory issues should I consider before hosting on Airbnb?</h5>
-            <div>When deciding whether to become an Airbnb host, it's...</div>
-        </div>
-        <div class="article-svg">
-            <img src="/images/hosting-stays.svg" height="16px" width="16px">
-            <span>Hosting stays</span>
-        </div>
-    </a>
+
+    <script>console.log("{{name}}");</script>
+    {{#each c_relatedArticles}}
+        <script>console.log("{{name}}");</script>
+    {{/each}}
+
+    {{#if (compare name "What’s expected of guests")}}
+        <script>console.log("match");</script>
+        {{#each c_relatedArticles}}
+            <a class="article-card" href="https://www.airbnb.com/help/article/272/can-i-require-guests-to-be-verified-before-booking" target="_blank">
+                <div class="space-y-2">
+                    <h5>{{name}}</h5>
+                    <div class="">{{shortDescription}}</div>
+                </div>
+                <div class="article-svg">
+                    <img src="/images/hosting-stays.svg" height="16px" width="16px">
+                    <span>Hosting stays</span>
+                </div>
+            </a>
+        {{/each}}
+    {{else}}
+        <a class="article-card" href="https://www.airbnb.com/help/article/272/can-i-require-guests-to-be-verified-before-booking" target="_blank">
+            <div class="space-y-2">
+                <h5>Can I require guests to be verified before booking?</h5>
+                <div>Hosts can require guests to complete Airbnb's Verified ID process...</div>
+            </div>
+            <div class="article-svg">
+                <img src="/images/hosting-stays.svg" height="16px" width="16px">
+                <span>Hosting stays</span>
+            </div>
+        </a>
+        <a class="article-card" href="https://www.airbnb.com/help/article/18/all-the-ways-to-host-on-airbnb" target="_blank">
+            <div class="space-y-2">
+                <h5>All the ways to host on Airbnb</h5>
+                <div>Maybe you have a special place to stay, or a great idea...</div>
+            </div>
+            <div class="article-svg">
+                <img src="/images/airbnb-basics.svg" height="16px" width="16px">
+                <span>Airbnb basics</span>
+            </div>
+        </a>
+        <a class="article-card" href="https://www.airbnb.com/help/article/376/what-legal-and-regulatory-issues-should-i-consider-before-hosting-on-airbnb" target="_blank">
+            <div class="space-y-2">
+                <h5>What legal and regulatory issues should I consider before hosting on Airbnb?</h5>
+                <div>When deciding whether to become an Airbnb host, it's...</div>
+            </div>
+            <div class="article-svg">
+                <img src="/images/hosting-stays.svg" height="16px" width="16px">
+                <span>Hosting stays</span>
+            </div>
+        </a>     
+    {{/if}}
+
+
 </div>
